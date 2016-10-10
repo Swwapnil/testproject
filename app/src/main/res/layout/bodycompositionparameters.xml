@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:baselineAligned="false">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Body Composition Parameters"
+                android:textColor="#00C68C"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/edit_text_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/age_layout"
+                    android:layout_width="120sp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:hint="Age"
+                        android:inputType="number" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/height_heightlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/height"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Height in cm"
+                        android:inputType="number" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/date_datelayout"
+                    android:layout_width="60sp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Date"
+                        android:inputType="date" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/weight_wlayout"
+                    android:layout_width="60sp"
+                    android:layout_height="wrap_content"/>
+                <EditText
+                    android:id="@+id/weight"
+                    android:layout_width="110sp"
+                    android:layout_height="wrap_content"
+                    android:hint="Weight"
+                    android:inputType="number" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/Total_totallayout"
+                    android:layout_width="110sp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/total"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Total Body Fat %"
+                        android:inputType="number" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/visceral_vlayout"
+                    android:layout_width="280sp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/vis_v"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Visceral Fat %"
+                        android:inputType="text" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/RM_rmlayout"
+                    android:layout_width="400sp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/RM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Resting Metabolism"
+                        android:inputType="number" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/BMI_bmlayout"
+                    android:layout_width="400sp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/BM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="BMI"
+                        android:inputType="number" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/Body_Blayout"
+                    android:layout_width="400sp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/BA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Body Age"
+                        android:inputType="number" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/Sub_Sublayout"
+                    android:layout_width="400sp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/Sub"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Subcutaneous Fat %"
+                        android:inputType="number" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/Ske_Slayout"
+                    android:layout_width="400sp"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/Ske"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Skeletal Muscle %"
+                        android:inputType="number" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/sub"
+                    android:onClick=""
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="80dp"
+                    android:background="#2c3e50"
+                    android:text="Submit"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+</LinearLayout>
