@@ -24,85 +24,72 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Customers extends AppCompatActivity {
-    Button btnMove;
-    private TextView tvLogin;
-    private EditText fullName, email_to_register, password_to_register;
-    private Button registerButton;
+    //Button btnMove;
+    private EditText fullName, age_a,gender_g,mobile_m,birth_b,Email_e,Add_a;
+    private Button btnMove;
     private Session session;
     private ProgressDialog pDialog;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_customers);
-
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
-        session = new Session(RegistrationActivity.this);
+        session = new Session(Customers.this);
 
         if (session.getLoggedIn()) {
-            Intent intent = new Intent(RegistrationActivity.this,
-                    MainActivity.class);
-            startActivity(intent);
-            finish();
-        }
-        registerButton = (Button) findViewById(R.id.register_button);
-        fullName = (EditText) findViewById(R.id.fullname_register);
-        email_to_register = (EditText) findViewById(R.id.email_register);
-        password_to_register = (EditText) findViewById(R.id.password_register);
-        tvLogin = (TextView) findViewById(R.id.tv_signin);
 
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String name = fullName.getText().toString();
-                String email = email_to_register.getText().toString();
-                String password = password_to_register.getText().toString();
 
-                if (!name.isEmpty() && !email.isEmpty() && !password.isEmpty()) {
-                    registerUser(name, email, password);
-                } else {
-                    Snackbar.make(v, "Please enter the credentials!", Snackbar.LENGTH_LONG)
-                            .show();
+            btnMove = (Button) findViewById(R.id.btnMove);
+            fullName = (EditText) findViewById(R.id.fullname);
+            age_a = (EditText) findViewById(R.id.age_a);
+            gender_g = (EditText) findViewById(R.id.gender_g);
+            mobile_m = (EditText) findViewById(R.id.mobile_m);
+            birth_b = (EditText) findViewById(R.id.birth_b);
+            Email_e = (EditText) findViewById(R.id.Email_e);
+            Add_a = (EditText) findViewById(R.id.Add_a);
+
+
+            btnMove.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String name = fullName.getText().toString();
+                    String age = age_a.getText().toString();
+                    String gender = gender_g.getText().toString();
+                    String mobile = mobile_m.getText().toString();
+                    String birth = birth_b.getText().toString();
+                    String email = Email_e.getText().toString();
+                    String Add = Add_a.getText().toString();
+
+                    if (!name.isEmpty() && !email.isEmpty() && !Add.isEmpty() && !age.isEmpty() && !gender.isEmpty() && !mobile.isEmpty() && !birth.isEmpty()) {
+                        registerUser(name, age, gender, mobile, birth, email, Add);
+
+                    } else {
+                        Snackbar.make(v, "Please enter the credentials!", Snackbar.LENGTH_LONG)
+                                .show();
+                    }
                 }
-            }
-        });
+            });
 
-        tvLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(RegistrationActivity.this,
-                        LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+
+        }
 
     }
-    public void sendMess(View view) {
-        final Button button = (Button) findViewById(R.id.btnMove);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent launchActivity1= new Intent(Customers.this,Bodycompositionparameters.class);
-                startActivity(launchActivity1);
-            }
-        });
-    }
+//customers--------------------------------------------------------------------------------------------------
 
-    //for consumers
 
-   
-    private void registerUser(final String name, final String email,
-                              final String password) {
+
+
+    private void registerUser(final String name, final String age,
+                              final String gender,final String mobile,final String birth,final String email,final String Add) {
         // Tag used to cancel the request
-        String tag_string_req = "req_register";
+        String tag_string_req = "req_profile";
 
-        pDialog.setMessage("Registering ...");
+        pDialog.setMessage("Saving Data ...");
         showDialog();
 
         StringRequest strReq = new StringRequest(Request.Method.POST,
@@ -118,8 +105,8 @@ public class Customers extends AppCompatActivity {
                     if (!error) {
 
                         Intent intent = new Intent(
-                                RegistrationActivity.this,
-                                LoginActivity.class);
+                                Customers.this,
+                                Bodycompositionparameters.class);
                         startActivity(intent);
                         finish();
                     } else {
@@ -146,10 +133,14 @@ public class Customers extends AppCompatActivity {
             protected Map<String, String> getParams() {
                 // Posting params to register url
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("tag", "register");
+                params.put("tag", "profile");
                 params.put("name", name);
+                params.put("age", age);
+                params.put("gender", gender);
+                params.put("mobile", mobile);
+                params.put("birth", birth);
                 params.put("email", email);
-                params.put("password", password);
+                params.put("Address", Add);
 
                 return params;
             }
@@ -168,5 +159,6 @@ public class Customers extends AppCompatActivity {
         if (pDialog.isShowing())
             pDialog.dismiss();
     }
+
 
 }
