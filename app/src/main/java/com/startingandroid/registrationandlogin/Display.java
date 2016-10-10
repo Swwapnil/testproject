@@ -44,4 +44,31 @@ public class Display extends Activity {
         });
 
     }
+    public void send(View view) {
+        final Button button = (Button) findViewById(R.id.button6);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent launchActivity2 = new Intent(Display.this, ConSearch.class);
+                startActivity(launchActivity2);
+
+            }
+
+        });
+
+    }
+
+    public void upl(View view) {
+        final Button button = (Button) findViewById(R.id.Upload1);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent launchActivity2 = new Intent(Display.this, Upload.class);
+                startActivity(launchActivity2);
+
+            }
+
+        });
+
+
+
+    }
 }
