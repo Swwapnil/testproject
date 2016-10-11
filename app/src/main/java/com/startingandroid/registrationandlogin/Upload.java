@@ -44,7 +44,7 @@ public class Upload extends Activity {
 
     String ImageName = "image_data" ;
 
-    String ServerUploadPath ="http://192.168.0.106:8080/image/upload-image-server.php" ;
+    String ServerUploadPath ="http://192.168.0.100:80/image/upload-image-server.php" ;
 
     ProgressDialog progressDialog ;
 

@@ -48,10 +48,17 @@
             android:name=".Before"
             android:label="before"
             android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name="android.app.default_searchable"
+            android:value=".ConSearch" />
         <activity
             android:name=".ConSearch"
             android:label="Search"
             android:theme="@style/AppTheme" />
+        <meta-data
+            android:name="android.app.searchable"
+            android:resource="@xml/searchable" />
         <activity
             android:name=".Upload"
             android:label="upload"
